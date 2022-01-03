@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>工具</title>
+	<style type="text/css">
+		.input{
+			float: left;
+			width: 40%;
+		}
+		.choose{
+			float: left;
+			width: 20%;
+		}
+		.output{
+			float: right;
+			width: 40%;
+		}
+		h1{
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<div class="row">
+		<div class="input">
+			<h1>输入区1</h1>
+			<textarea id="input1" rows="15" cols="80"></textarea>
+			<h1>输入区2</h1>
+			<textarea id="input2" rows="15" cols="80"></textarea>
+		</div>
+		<div class="choose">
+			<h1>选择密码学工具</h1>
+			<div>
+				<input type="radio" name="algo" value="hmacmd5" id="hmacmd5" checked>hmacmd5
+			</div>
+			<div>
+				<input type="radio" name="algo" value="hmacsha1" id="hmacsha1" >hmacsha1
+			</div>
+			<div>
+				<input type="radio" name="algo" value="hmacsha3" id="hmacsha3" >hmacsha3
+			</div>
+			<div>
+				<input type="radio" name="algo" value="hmacsha224" id="hmacsha224" >hmacsha224
+			</div>
+		</div>
+		<div class="output">
+			<h1>输出区</h1>
+			<textarea id="output" rows="40" cols="80"></textarea>
+		</div>
+	</div>
+	<script src="js/crypto-js.min.js"></script>
+	<script>
+		const choose = {
+			"hmacmd5": CryptoJS.HmacMD5,
+			"hmacsha1": CryptoJS.HmacSHA1,
+			"hmacsha3": CryptoJS.HmacSHA3,
+			"hmacsha224": CryptoJS.HmacSHA224,
+		}
+		const algo_list = document.getElementsByName("algo")
+		input1.oninput = input2.oninput = () => {
+			const value1 = input1.value
+			const value2 = input2.value
+			for (let i = 0; i < algo_list.length; i++) {
+				const radio = algo_list[i]
+				if (radio.checked) {
+					output.value = choose[radio.value](value1, value2)
+				}
+			}
+		};
+	</script>
+</body>
+</html>
