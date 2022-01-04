@@ -43,6 +43,51 @@
 			<div>
 				<input type="radio" name="algo" value="hmacsha224" id="hmacsha224" >hmacsha224
 			</div>
+			<div>
+				<input type="radio" name="algo" value="hmacsha256" id="hmacsha256" >hmacsha256
+			</div>
+			<div>
+				<input type="radio" name="algo" value="hmacsha384" id="hmacsha384" >hmacsha384
+			</div>
+			<div>
+				<input type="radio" name="algo" value="hmacsha512" id="hmacsha512" >hmacsha512
+			</div>
+			<div>
+				<input type="radio" name="algo" value="aes_encode" id="aes_encode" >aes_encode
+			</div>
+			<div>
+				<input type="radio" name="algo" value="aes_decode" id="aes_decode" >aes_decode
+			</div>
+			<div>
+				<input type="radio" name="algo" value="des_encode" id="des_encode" >des_encode
+			</div>
+			<div>
+				<input type="radio" name="algo" value="des_decode" id="des_decode" >des_decode
+			</div>
+			<div>
+				<input type="radio" name="algo" value="tripledes_encode" id="tripledes_encode" >tripledes_encode
+			</div>
+			<div>
+				<input type="radio" name="algo" value="tripledes_decode" id="tripledes_decode" >tripledes_decode
+			</div>
+			<div>
+				<input type="radio" name="algo" value="rabbit_encode" id="rabbit_encode" >rabbit_encode
+			</div>
+			<div>
+				<input type="radio" name="algo" value="rabbit_decode" id="rabbit_decode" >rabbit_decode
+			</div>
+			<div>
+				<input type="radio" name="algo" value="rc4_encode" id="rc4_encode" >rc4_encode
+			</div>
+			<div>
+				<input type="radio" name="algo" value="rc4_decode" id="rc4_decode" >rc4_decode
+			</div>
+			<div>
+				<input type="radio" name="algo" value="rc4drop_encode" id="rc4drop_encode" >rc4drop_encode
+			</div>
+			<div>
+				<input type="radio" name="algo" value="rc4drop_decode" id="rc4drop_decode" >rc4drop_decode
+			</div>
 		</div>
 		<div class="output">
 			<h1>输出区</h1>
@@ -56,6 +101,21 @@
 			"hmacsha1": CryptoJS.HmacSHA1,
 			"hmacsha3": CryptoJS.HmacSHA3,
 			"hmacsha224": CryptoJS.HmacSHA224,
+			"hmacsha256": CryptoJS.HmacSHA256,
+			"hmacsha384": CryptoJS.HmacSHA384,
+			"hmacsha512": CryptoJS.HmacSHA512,
+			"aes_encode": CryptoJS.AES.encrypt,
+			"aes_decode": CryptoJS.AES.decrypt,
+			"des_encode": CryptoJS.DES.encrypt,
+			"des_decode": CryptoJS.DES.decrypt,
+			"tripledes_encode": CryptoJS.TripleDES.encrypt,
+			"tripledes_decode": CryptoJS.TripleDES.decrypt,
+			"rabbit_encode": CryptoJS.Rabbit.encrypt,
+			"rabbit_decode": CryptoJS.Rabbit.decrypt,
+			"rc4_encode": CryptoJS.RC4.encrypt,
+			"rc4_decode": CryptoJS.RC4.decrypt,
+			"rc4drop_encode": CryptoJS.RC4Drop.encrypt,
+			"rc4drop_decode": CryptoJS.RC4Drop.decrypt,
 		}
 		const algo_list = document.getElementsByName("algo")
 		input1.oninput = input2.oninput = () => {
